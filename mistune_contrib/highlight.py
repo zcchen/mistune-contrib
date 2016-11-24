@@ -38,6 +38,6 @@ def block_code(text, lang, inlinestyles=False, linenos=False):
 class HighlightMixin(object):
     def block_code(self, text, lang):
         # renderer has an options
-        inlinestyles = self.options.get('inlinestyles')
-        linenos = self.options.get('linenos')
+        inlinestyles = True if self.options.get('inlinestyles') else False
+        linenos = True if self.options.get('linenos') else False
         return block_code(text, lang, inlinestyles, linenos)
